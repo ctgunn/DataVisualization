@@ -1,12 +1,22 @@
-import React, { Component } from 'react';
-import './css/app.css';
+import React, {Component} from 'react';
+import NavbarItem from './navbarItem';
+import '../../css/main.css';
 
-class Navbar extends Component {
+class navbar extends Component {
+    static generateItem(item) {
+        return <NavbarItem text={item.text} url={item.url} submenu={item.submenu} />
+    }
+
     render() {
-        return (
+        console.log(this.props.items);
+        let items = this.props.items.map(navbar.generateItem);
 
+        return (
+            <ul className="menu">
+                {items}
+            </ul>
         );
     }
 }
 
-export default Navbar;
+export default navbar;
