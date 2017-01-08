@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './components/navbar/navbar';
+import Menu from './components/navbar/menu';
 // eslint-disable-next-line
 import logo from './images/logo.svg';
 import menu from './json/menu.json';
@@ -7,10 +7,8 @@ import './css/app.css';
 
 class app extends Component {
     render() {
-        console.log(menu.items);
-
         return (
-            <Navbar items={menu.items} />
+            <Menu items={menu.items} />
 
             // <div className="App">
             //     <div className="App-header">
