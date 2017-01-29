@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import MenuItem from './menuItem';
-import 'jquery'
-import 'react-bootstrap'
+import MenuItem from './menuItem.jsx';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../css/main.css';
 
 class menu extends Component {
-    static generateItem(item) {
+    generateItem(item) {
         return <MenuItem text={item.text} url={item.url} submenu={item.submenu} />
     }
 

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import Menu from './menu';
-import NavbarSearch from './navbarSearch';
-import 'jquery'
-import 'react-bootstrap'
+import menu from './menu.jsx';
+import navbarSearch from './navbarSearch.jsx';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../css/main.css';
-import menu from '../../json/menu.json';
+import items from '../../json/menu.json';
 
 class navbar extends Component {
     render() {
@@ -22,9 +20,9 @@ class navbar extends Component {
                 </a>
 
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <Menu items={menu.items}/>
+                    <menu items={items}/>
 
-                    <NavbarSearch />
+                    <navbarSearch />
                 </div>
             </nav>
         );

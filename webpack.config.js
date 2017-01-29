@@ -11,8 +11,8 @@ var webpackShimConfig = {
         'jquery': {
             exports: '$' // Once loaded, use the global '$' as the module value.
         },
-        'bootstrap': {
-            deps: ['jquery']
+        'react-bootstrap': {
+            deps:['jquery']
         }
 
     }
@@ -35,7 +35,41 @@ let config = {
                 test : /\.jsx?/,
                 include : APP_DIR,
                 loader : 'babel-loader'
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            },
+            {
+                test: /\.png$/,
+                use: { loader: 'url-loader', options: { limit: 100000 } },
+            },
+            {
+                test: /\.jpg$/,
+                use: [ 'file-loader' ]
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.woff2?$/,
+                // Inline small woff files and output them below font/.
+                // Set mimetype just in case.
+                loader: 'url-loader',
+                options: {
+                    name: 'fonts/[hash].[ext]',
+                    limit: 50000,
+                    mimetype: 'application/font-woff',
+                },
+            },
+            {
+                test: /\.(ttf|svg|eot)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[hash].[ext]',
+                },
+            },
         ]
     },
     resolve: {
@@ -49,24 +83,6 @@ let config = {
             $: 'jquery',
             jQuery: 'jquery'
         })
-    ],
-    rules: [
-        {
-            test: /\.css$/,
-            use: [ 'style-loader', 'css-loader' ]
-        },
-        {
-            test: /\.png$/,
-            use: { loader: 'url-loader', options: { limit: 100000 } },
-        },
-        {
-            test: /\.jpg$/,
-            use: [ 'file-loader' ]
-        },
-        {
-            test: /\.json$/,
-            loader: 'json'
-        }
     ]
 };
 
