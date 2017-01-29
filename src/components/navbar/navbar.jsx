@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Menu from './menu';
 import NavbarSearch from './navbarSearch';
-import '../../../node_modules/jquery/dist/jquery.min'
+import 'jquery'
+import 'react-bootstrap'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../../../node_modules/bootstrap/dist/js/bootstrap.min'
-import menu from '../../json/menu.json';
 import '../../css/main.css';
+import menu from '../../json/menu.json';
 
 class navbar extends Component {
     render() {

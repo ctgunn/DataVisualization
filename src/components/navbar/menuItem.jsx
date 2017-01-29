@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Menu from './menu';
 import MenuItemLink from './menuItemLink';
-import '../../../node_modules/jquery/dist/jquery.min'
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../../../node_modules/bootstrap/dist/js/bootstrap.min'
+import 'jquery';
+import 'react-bootstrap';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../css/main.css';
 
 class menuItem extends Component {
