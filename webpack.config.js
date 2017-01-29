@@ -19,7 +19,7 @@ var webpackShimConfig = {
 };
 
 let config = {
-    entry: APP_DIR + '/index.js',
+    entry: APP_DIR + '/index.jsx',
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
@@ -27,14 +27,14 @@ let config = {
     module : {
         loaders : [
             {
-                test : /\.js?/,
-                loader : 'shim-loader',
-                query: webpackShimConfig,
-            },
-            {
                 test : /\.jsx?/,
                 include : APP_DIR,
                 loader : 'babel-loader'
+            },
+            {
+                test : /\.js?/,
+                loader : 'shim-loader',
+                query: webpackShimConfig,
             },
             {
                 test: /\.css$/,
