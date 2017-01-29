@@ -62,6 +62,10 @@ let config = {
         {
             test: /\.jpg$/,
             use: [ 'file-loader' ]
+        },
+        {
+            test: /\.json$/,
+            loader: 'json'
         }
     ]
 };
