@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {render} from 'react-dom';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../css/main.css';
 
-class navbarSearch extends Component {
+class NavbarSearch extends Component {
     render() {
         return (
             <form className="form-inline mt-2 mt-md-0">
@@ -16,4 +17,4 @@ class navbarSearch extends Component {
     }
 }
 
-export default navbarSearch;
+render(<NavbarSearch/>, document.getElementById('navbarSearch'));

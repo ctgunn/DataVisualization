@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import menu from './menu.jsx';
-import navbarSearch from './navbarSearch.jsx';
+import {render} from 'react-dom';
+import Menu from './menu.jsx';
+import NavbarSearch from './navbarSearch.jsx';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../css/main.css';
 import items from '../../json/menu.json';
 
-class navbar extends Component {
+class Navbar extends Component {
     render() {
+        console.log('items: ' + JSON.stringify(items.items));
+
         return (
             <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -20,13 +23,17 @@ class navbar extends Component {
                 </a>
 
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <menu items={items}/>
+                    <div id="navbarMenu">
+                        <Menu items={items.items}/>
+                    </div>
 
-                    <navbarSearch />
+                    <div id="navbarSearch">
+                        <NavbarSearch />
+                    </div>
                 </div>
             </nav>
         );
     }
 }
 
-export default navbar;
+render(<Navbar/>);
