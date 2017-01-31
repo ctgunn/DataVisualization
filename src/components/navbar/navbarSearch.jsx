@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
+import {Navbar, FormGroup, FormControl} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../css/main.css';
 
 class NavbarSearch extends Component {
     render() {
         return (
-            <form className="form-inline mt-2 mt-md-0">
-                <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Search
-                </button>
-            </form>
+            <Navbar.Form pullRight>
+                <FormGroup>
+                    <FormControl type="text" placeholder="Search" />
+                </FormGroup>
+                {' '}
+                <Button type="submit">Search</Button>
+            </Navbar.Form>
         );
     }
 }
 
-render(<NavbarSearch/>, document.getElementById('navbarSearch'));
+export default NavbarSearch;

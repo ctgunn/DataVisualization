@@ -41,6 +41,10 @@ let config = {
                 use: [ 'style-loader', 'css-loader' ]
             },
             {
+                test: /\.less$/,
+                loader: "style!css!less"
+            },
+            {
                 test: /\.png$/,
                 use: { loader: 'url-loader', options: { limit: 100000 } },
             },

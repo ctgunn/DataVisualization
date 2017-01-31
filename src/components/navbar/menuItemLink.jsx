@@ -11,4 +11,4 @@ class MenuItemLink extends Component {
     }
 }
 
-render(<MenuItemLink/>);
+export default MenuItemLink;
