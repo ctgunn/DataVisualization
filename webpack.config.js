@@ -4,19 +4,7 @@ const path = require('path');
 const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src');
 
-var webpackShimConfig = {
-    // Remember: Only use shim config for incompatible libraries
-    // the libraries below are just examples, regardless whether they are compatible or not
-    shim: {
-        'jquery': {
-            exports: '$' // Once loaded, use the global '$' as the module value.
-        },
-        'react-bootstrap': {
-            deps:['jquery']
-        }
-
-    }
-};
+let webpackShimConfig = {};
 
 let config = {
     entry: APP_DIR + '/index.jsx',

@@ -2,32 +2,39 @@
   "items": [
     {
       "text": "Home",
+      "eventKey": "1",
       "url": "#"
     },
     {
       "text": "Breweries",
+      "eventKey": "2",
       "url": "#"
     },
     {
       "text": "Beers",
+      "eventKey": "3",
       "url": "#",
       "submenu": [
         {
           "text": "By Brewery",
+          "eventKey": "3.1",
           "url": "#"
         },
         {
           "text": "By State",
+          "eventKey": "3.2",
           "url": "#"
         },
         {
           "text": "By Alcohol Content",
+          "eventKey": "3.3",
           "url": "#"
         }
       ]
     },
     {
       "text": "Styles",
+      "eventKey": "4",
       "url": "#"
     }
   ]

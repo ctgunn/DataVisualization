@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Nav} from 'react-bootstrap';
-import MenuItem from './menuItem.jsx';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import MenuLink from './menuLink.jsx';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../css/main.css';
 
 class Menu extends Component {
     generateItem(item) {
-        return <MenuItem text={item.text} url={item.url} submenu={item.submenu} />
+        return <MenuLink text={item.text} url={item.url} submenu={item.submenu} />
     }
 
     render() {
+        console.log('this.props.items: ' + JSON.stringify(this.props.items));
         let items = this.props.items.map(this.generateItem);
+        console.log('menuItems: ' + items);
 
         return (
             <Nav>
