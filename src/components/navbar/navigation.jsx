@@ -1,39 +1,69 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import Menu from './menu.jsx';
 import NavigationSearch from './navigationSearch.jsx';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 import '../../css/main.css';
-import items from '../../json/menu.json';
 
 class Navigation extends Component {
     render() {
+        const menuItems = {
+            "items": [
+                {
+                    "text": "Home",
+                    "eventKey": 1,
+                    "url": "#"
+                },
+                {
+                    "text": "Breweries",
+                    "eventKey": 2,
+                    "url": "#"
+                },
+                {
+                    "text": "Beers",
+                    "eventKey": 3,
+                    "url": "#",
+                    "submenu": [
+                        {
+                            "text": "By Brewery",
+                            "eventKey": 3.1,
+                            "url": "#"
+                        },
+                        {
+                            "text": "By State",
+                            "eventKey": 3.2,
+                            "url": "#"
+                        },
+                        {
+                            "text": "By Alcohol Content",
+                            "eventKey": 3.3,
+                            "url": "#"
+                        }
+                    ]
+                },
+                {
+                    "text": "Styles",
+                    "eventKey": 4,
+                    "url": "#"
+                }
+            ]
+        };
+
         return (
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">React-Bootstrap</a>
+                        <a href="#">Brewski</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
+
                 <Navbar.Collapse>
-                    <Nav>
-                        <NavItem eventKey={1} href="#">Link</NavItem>
-                        <NavItem eventKey={2} href="#">Link</NavItem>
-                        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Action</MenuItem>
-                            <MenuItem eventKey={3.2}>Another action</MenuItem>
-                            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                            <MenuItem divider />
-                            <MenuItem eventKey={3.3}>Separated link</MenuItem>
-                        </NavDropdown>
-                    </Nav>
-                    <Nav pullRight>
-                        <NavItem eventKey={1} href="#">Link Right</NavItem>
-                        <NavItem eventKey={2} href="#">Link Right</NavItem>
-                    </Nav>
+                    <Menu items={menuItems}/>
+
+                    <NavigationSearch />
                 </Navbar.Collapse>
             </Navbar>
         );

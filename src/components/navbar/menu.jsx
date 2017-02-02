@@ -7,7 +7,7 @@ import '../../css/main.css';
 
 class Menu extends Component {
     generateItem(item) {
-        return <MenuLink text={item.text} url={item.url} submenu={item.submenu} />
+        return <MenuLink eventKey={item.eventKey} text={item.text} url={item.url} submenu={item.submenu} />
     }
 
     render() {

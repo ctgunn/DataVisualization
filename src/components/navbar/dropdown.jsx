@@ -13,10 +13,10 @@ class Dropdown extends Component {
             if (item.eventKey === 'divider') {
                 menuItem.push(<MenuItem divider/>);
             } else {
-                menuItem.push(<MenuItem href={item.url}>{item.text}</MenuItem>);
+                menuItem.push(<MenuItem eventKey={{eventKey}} href={item.url}>{item.text}</MenuItem>);
             }
         } catch(error) {
-            console.log('Error occurred in generateItem.');
+            console.log('Error occurred in generateContent.');
             console.log('Error: ' + error);
             console.trace();
             menuItem = null;
@@ -29,7 +29,7 @@ class Dropdown extends Component {
         let items = this.props.submenu.map(this.generateItem);
 
         return (
-            <NavDropdown href={this.props.url} title={this.props.text}>
+            <NavDropdown eventKey={this.props.eventKey} href={this.props.url} title={this.props.text}>
                 {items}
             </NavDropdown>
         );

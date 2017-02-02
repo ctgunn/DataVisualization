@@ -10,15 +10,15 @@ class MenuLink extends Component {
         console.log('this.props.generateLink: ' + JSON.stringify(this.props));
         //Right now we don't need our class but what if we wanted to change the text, add an arrow or something?
         //Single responsibility principles tell us that it our "Item" should not handle this.
-        let eventKey = parseInt(this.props.eventKey);
 
-        return <NavItem href={this.props.url}>{this.props.text}</NavItem>;
+        return <NavItem eventKey={this.props.eventKey} href={this.props.url}>{this.props.text}</NavItem>;
     }
 
     generateSubmenu() {
+        console.log('this.props.generateSubmenu: ' + JSON.stringify(this.props));
         //We generate a simple Navbar (the parent).
         //Spoilers: it takes items as its argument.
-        return <Dropdown text={this.props.text} url={this.props.url} submenu={this.props.submenu} />
+        return <Dropdown eventKey={this.props.eventKey} text={this.props.text} url={this.props.url} submenu={this.props.submenu} />
     }
 
     generateContent() {
@@ -44,6 +44,7 @@ class MenuLink extends Component {
 
     render() {
         let content = this.generateContent();
+        console.log(content);
 
         return {content};
     }
