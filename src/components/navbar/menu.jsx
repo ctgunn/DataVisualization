@@ -11,9 +11,7 @@ class Menu extends Component {
     }
 
     render() {
-        console.log('this.props.items: ' + JSON.stringify(this.props.items));
         let items = this.props.items.map(this.generateItem);
-        console.log('menuItems: ' + items);
 
         return (
             <Nav>
